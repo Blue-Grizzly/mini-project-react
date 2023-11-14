@@ -1,15 +1,17 @@
+/* eslint-disable react/prop-types */
 export default function Table({data}){
 
     return (
     <div>
+        <h3>Users</h3>
     <table>
         <thead>
         <tr>
             <th>
-                Name
+                ID
             </th>
             <th>
-                ID
+                Name
             </th>
             <th>
                 Mail
@@ -19,8 +21,8 @@ export default function Table({data}){
         <tbody>
             {data.map((user)=>(
                 <tr key={user.id}>
-                    <td>{user.name}</td>
                     <td>{user.id}</td>
+                    <td>{user.name}</td>
                     <td>{user.mail}</td>
                 </tr>
             ))}

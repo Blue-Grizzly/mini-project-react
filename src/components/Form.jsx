@@ -5,7 +5,8 @@ export default function UserForm(){
     const [id, setId] = useState("");
     const [mail, setMail] = useState("");
 
-    const handleSubmit = async (event) => {
+    try{
+    async function handleSubmit(event) {
         event.preventDefault();
         const user = {name, id, mail};
 
@@ -23,16 +24,19 @@ export default function UserForm(){
             setId("");
             setMail("");
         }
-    } 
-    return (
-        <div>
-            <h3>Create User</h3>
-            <form onSubmit={handleSubmit}>
-                <label>Name<input name="name" value={name} onChange={ (event)=> setName(event.target.value)}></input></label><br/>
-                <label>Id<input name="Id" value={id} onChange={ (event)=> setId(event.target.value)}></input></label><br/>
-                <label>Mail<input name="Mail" value={mail} onChange={ (event)=> setMail(event.target.value)}></input></label><br/>
-                <input type="submit"/>
-            </form>
-        </div>
-    )
+            return (
+                <div>
+                <h3>Create User</h3>
+                <form onSubmit={handleSubmit}>
+                    <label>Name<input name="name" value={name} onChange={ (event)=> setName(event.target.value)}></input></label><br/>
+                    <label>Id<input name="Id" value={id} onChange={ (event)=> setId(event.target.value)}></input></label><br/>
+                    <label>Mail<input name="Mail" value={mail} onChange={ (event)=> setMail(event.target.value)}></input></label><br/>
+                    <input type="submit"/>
+                </form>
+            </div>
+        )
+    }
+} catch (err){
+    throw(err)    
+} 
 }
