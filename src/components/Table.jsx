@@ -1,6 +1,5 @@
 export default function Table({data}){
 
-    console.log(data)
     return (
     <div>
     <table>
